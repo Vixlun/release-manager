@@ -1,0 +1,48 @@
+###
+GET http://localhost:8080/services?systemVersion=1
+Accept: application/json
+
+####
+POST http://localhost:8080/deploy
+Content-Type: application/json
+
+{
+  "name": "Service A",
+  "version": 1
+}
+
+
+###
+POST http://localhost:8080/deploy
+Content-Type: application/json
+
+{
+  "name": "Service B",
+  "version": 1
+}
+
+###
+POST http://localhost:8080/deploy
+Content-Type: application/json
+
+{
+  "name": "Service A",
+  "version": 2
+}
+
+###
+POST http://localhost:8080/deploy
+Content-Type: application/json
+
+{
+  "name": "Service B",
+  "version": 1
+}
+
+###
+GET http://localhost:8080/services?systemVersion=2
+Accept: application/json
+
+###
+GET http://localhost:8080/services?systemVersion=3
+Accept: application/json
